@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:1337/api
+@jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY0Mzg2MDQxLCJleHAiOjE2NjY5NzgwNDF9.jIzejKQFLtbvK30O3W4DiTtxmP6VEZgQeaou3VC1uao
+
+###CADASTRO
+POST {{baseUrl}}/auth/local/register
+Content-Type: application/json
+
+{
+    "email":"carlos@teste.com",
+    "username": "carlos",
+    "password": "Teste12345"
+}
+
+###LOGIN
+POST {{baseUrl}}/auth/local
+Content-Type: application/json
+
+{
+    "identifier":"carlos@teste.com",
+    "password": "Teste12345"
+}
+
+
+###LOGIN
+GET {{baseUrl}}/users?tarefas=*
+Authorization: Bearer {{jwt}}
+
+
+
+### Criando item
